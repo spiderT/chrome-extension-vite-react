@@ -23,14 +23,14 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "<all_urls>"],
-      "js": ["contentScript.bundle.js", "content-script.js", "http-interceptor-content.js", "http-interceptor.js"],
+      "js": ["contentScript.bundle.js", "inject1.bundle.js", "inject1.bundle.js"],
       "css": ["content.styles.css"]
     }
   ],
   "devtools_page": "devtools.html",
   "web_accessible_resources": [
     {
-      "resources": ["content.styles.css", "logo_128.png", "content-script.js", "http-interceptor-content.js", "http-interceptor.js"],
+      "resources": ["content.styles.css", "logo_128.png"],
       "matches": []
     }
   ]

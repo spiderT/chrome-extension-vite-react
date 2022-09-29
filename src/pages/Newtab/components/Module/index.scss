@@ -1,0 +1,45 @@
+p {
+  margin: 0;
+}
+.module-item-wrap {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-wrap: wrap;
+
+  .module-item {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 10px;
+    width: 350px;
+    box-sizing: border-box;
+    height: 80px;
+    align-items: flex-start;
+    cursor: pointer;
+    .ant-avatar-image {
+      margin: 10px;
+    }
+    &:hover {
+      box-shadow: #ccc 0px 0px 10px;
+    }
+  }
+  .title {
+    margin: 10px 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .desc {
+    font-weight: 300;
+    font-size: 14px;
+    overflow: hidden;
+    width: 300px;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 8px;
+  }
+  .content {
+    width: 300px;
+  }
+}

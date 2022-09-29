@@ -1,0 +1,29 @@
+.module-title {
+  height: 26px;
+  text-align: center;
+  margin: 30px 0;
+
+  .title {
+    color: #003391;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 26px;
+
+    &::before,
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 63px;
+      height: 18px;
+      background: url('https://h5.test.shantaijk.cn/dax/images/gchm_tltle_left.2d7bab4.png') no-repeat;
+      background-size: contain;
+      margin-right: 16px;
+    }
+
+    &::after {
+      background: url('https://h5.test.shantaijk.cn/dax/images/gchm_tltle_right.6297b6d.png') no-repeat;
+      background-size: contain;
+      margin-left: 16px;
+    }
+  }
+}

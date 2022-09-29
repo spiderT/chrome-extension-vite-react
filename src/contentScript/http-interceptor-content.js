@@ -1,7 +1,7 @@
 // 在页面上插入代码
 const script = document.createElement('script');
 script.setAttribute('type', 'text/javascript');
-script.setAttribute('src', chrome.runtime.getURL('src/http-interceptor.js'));
+script.setAttribute('src', chrome.runtime.getURL('./http-interceptor.js'));
 document.documentElement.appendChild(script);
 
 script.addEventListener('load', () => {
