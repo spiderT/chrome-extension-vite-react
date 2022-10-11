@@ -1,20 +1,22 @@
 import './index.scss';
 import React from 'react';
-import { Avatar, Tag } from 'antd';
+import { Avatar } from 'antd';
 import ModuleTitle from '../ModuleTitle';
+
+interface ModuleValue {
+  name: string;
+  icon: string;
+  desc: string;
+  url?: string;
+}
 
 interface ModuleItemProps {
   name: string;
-  value: {
-    name: string;
-    icon: string;
-    desc: string;
-    url?: string;
-  }[];
+  value: ModuleValue[];
 }
 
 const Module: React.FC<ModuleItemProps> = (props) => {
-  const renderItem = (item) => {
+  const renderItem = (item: ModuleValue) => {
     return (
       <div className="module-item" onClick={() => item.url && window.open(item.url)}>
         <Avatar shape="square" src={item.icon} />

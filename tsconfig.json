@@ -1,21 +1,19 @@
 {
-  "ts-node": {
-    "transpileOnly": true
-  },
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES6",
-    "noImplicitAny": false,
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "esModuleInterop": false,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "removeComments": true,
-    "esModuleInterop": true,
-    "preserveConstEnums": true,
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "downlevelIteration": true,
-    "jsx": "react",
-    "outDir": "./dist/",
-    "rootDir": "./src"
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "include": ["src/**/*", "global.d.ts"]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,0 +1,17 @@
+.qr-wrap {
+  display: flex;
+  .input-wrap {
+    text-align: center;
+    margin-top: 60px;
+    margin-right: 50px;
+
+    .btn {
+      margin-top: 30px;
+    }
+  }
+  img,
+  textarea {
+    width: 400px;
+    display: block;
+  }
+}

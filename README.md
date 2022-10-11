@@ -3,6 +3,7 @@
 - [chrome extension](#chrome-extension)
   - [1、项目功能](#1项目功能)
     - [1、新标签页](#1新标签页)
+    - [2、popup弹窗](#2popup弹窗)
   - [2、chrome 核心内容介绍](#2chrome-核心内容介绍)
     - [manifest.json](#manifestjson)
     - [content-scripts](#content-scripts)
@@ -23,9 +24,13 @@
   - [5、5种类型的JS对比](#55种类型的js对比)
 ## 1、项目功能
 
+技术栈：vite+react-router
+
 ### 1、新标签页
 
 ![newtab](/images/newtab.png)
+
+### 2、popup弹窗
 
 ## 2、chrome 核心内容介绍
 

@@ -1,0 +1,18 @@
+.chrome-extension-popup {
+  width: 180px;
+  padding: 10px;
+  box-sizing: border-box;
+  .popup-item {
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px dashed #ddd;
+  }
+  .github {
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: right;
+    cursor: pointer;
+  }
+}

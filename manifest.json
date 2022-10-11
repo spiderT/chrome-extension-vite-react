@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "spiderT",
+  "description": "devtools",
+  "version": "0.0.1",
+  "action": {
+    "default_popup": "index.html#/popup",
+    "default_icon": "logo_128.png"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html#/newtab"
+  },
+  "icons": {
+    "16": "logo_128.png",
+    "32": "logo_128.png",
+    "48": "logo_128.png",
+    "64": "logo_128.png",
+    "128": "logo_128.png"
+  },
+  "permissions": ["proxy", "storage", "webRequest", "tabs", "webNavigation"],
+  "converted_from_user_script": true,
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "js": ["content-script.js"],
+      "css": []
+    }
+  ],
+  "devtools_page": "index.html/#/devtools",
+  "web_accessible_resources": [
+    {
+      "resources": ["logo_128.png"],
+      "matches": []
+    }
+  ]
+}
