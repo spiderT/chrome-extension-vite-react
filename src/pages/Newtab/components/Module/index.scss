@@ -8,6 +8,7 @@ p {
   flex-wrap: wrap;
 
   .module-item {
+    position: relative;
     display: flex;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -17,11 +18,14 @@ p {
     height: 80px;
     align-items: flex-start;
     cursor: pointer;
-    .ant-avatar-image {
+    .ant-avatar-square {
       margin: 10px;
     }
     &:hover {
       box-shadow: #ccc 0px 0px 10px;
+      .edit {
+        color: #000;
+      }
     }
   }
   .title {
@@ -41,5 +45,32 @@ p {
   }
   .content {
     width: 300px;
+  }
+}
+
+.edit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  line-height: 24px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    color: #000;
+    background-color: #eee;
+  }
+}
+
+.edit-item {
+  cursor: pointer;
+  &:hover {
+    color: #1890ff;
   }
 }

@@ -22,14 +22,14 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "<all_urls>"],
-      "js": ["content-script.js"],
+      "js": ["script/content-script.js", "script/http-interceptor-content.js", "script/http-interceptor.js"],
       "css": []
     }
   ],
-  "devtools_page": "index.html/#/devtools",
+  "devtools_page": "index.html#/devtools",
   "web_accessible_resources": [
     {
-      "resources": ["logo_128.png"],
+      "resources": ["logo_128.png", "script/http-interceptor-content.js", "script/http-interceptor.js"],
       "matches": []
     }
   ]

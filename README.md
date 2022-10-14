@@ -4,6 +4,7 @@
   - [1、项目功能](#1项目功能)
     - [1、新标签页](#1新标签页)
     - [2、popup弹窗](#2popup弹窗)
+    - [3、devtool的http-mock](#3devtool的http-mock)
   - [2、chrome 核心内容介绍](#2chrome-核心内容介绍)
     - [manifest.json](#manifestjson)
     - [content-scripts](#content-scripts)
@@ -26,11 +27,24 @@
 
 技术栈：vite+react-router
 
+```text
+pnpm install
+npm run build
+```
+
+通过Chrome扩展程序管理加载已解压扩展程序 选择当前工程的dist目录
+
 ### 1、新标签页
 
 ![newtab](/images/newtab.png)
 
 ### 2、popup弹窗
+
+![popup](/images/popup.png)
+
+### 3、devtool的http-mock
+
+![devtool](/images/devtool.png)
 
 ## 2、chrome 核心内容介绍
 

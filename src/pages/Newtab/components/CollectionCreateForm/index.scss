@@ -1,0 +1,14 @@
+.add-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  line-height: 44px;
+  font-size: 22px;
+  color: #ccc;
+  text-align: center;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+}
