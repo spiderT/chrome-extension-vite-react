@@ -1,0 +1,26 @@
+.compress-wrap {
+  margin-top: 30px;
+  .compress-line {
+    width: 600px;
+    border-bottom: 1px dashed #444;
+    line-height: 32px;
+    text-align: center;
+  }
+  .compress-item {
+    display: inline-block;
+    width: 70px;
+    margin-right: 20px;
+    &.compress-item-large {
+      width: 170px;
+    }
+    &.download {
+      cursor: pointer;
+      width: 50px;
+    }
+  }
+}
+
+.ant-upload.ant-upload-drag.compress-img-wrap {
+  height: 400px;
+  width: 600px;
+}

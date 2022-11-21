@@ -5,7 +5,7 @@ const TEXTAREA = 'textarea';
 interface Props {
   className?: string;
   rows?: number;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
   type?: typeof TEXTAREA;
   placeholder?: string;
 }

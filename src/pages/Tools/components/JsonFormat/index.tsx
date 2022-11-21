@@ -1,5 +1,5 @@
 import './index.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Select } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import ReactJson from 'react-json-view';
@@ -13,7 +13,7 @@ export default function JsonFormat() {
   const [obj, setObj] = useState<Object>({});
   const [error, setError] = useState<any>(null);
 
-  const safeJsonParse = (v: string) => {
+  const safeJsonParse = (v) => {
     if (!v) {
       setError(null);
       return {};
@@ -25,17 +25,17 @@ export default function JsonFormat() {
     try {
       setError(null);
       return JSON.parse(v);
-    } catch (error) {
-      setError(error.message);
-      return error.message;
+    } catch (err) {
+      setError(err.message);
+      return err.message;
     }
   };
 
   const handleFormat = () => {
     setObj(safeJsonParse(value));
   };
-  const handleChange = (value: string) => {
-    setIndent(value);
+  const handleChange = (v: string) => {
+    setIndent(v);
   };
 
   return (

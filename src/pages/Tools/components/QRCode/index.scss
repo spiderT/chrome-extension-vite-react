@@ -1,5 +1,6 @@
 .qr-wrap {
   display: flex;
+  position: relative;
   .input-wrap {
     text-align: center;
     margin-top: 60px;
@@ -14,4 +15,7 @@
     width: 400px;
     display: block;
   }
+}
+.parse-wrap {
+  display: flex;
 }

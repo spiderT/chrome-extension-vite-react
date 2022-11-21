@@ -12,3 +12,26 @@ export const getQuery = () => {
   const urlSearch = new URLSearchParams(items);
   return Object.fromEntries(urlSearch.entries());
 };
+
+export const isBase64 = (str: string): boolean => {
+  if (!str || !str.trim()) {
+    return false;
+  }
+  try {
+    return btoa(atob(str)) == str;
+  } catch (err) {
+    return false;
+  }
+};
+
+export const isDataURL = (dataurl: string): boolean => {
+  const arr = dataurl.split(',');
+  if (!arr[0].startsWith('data:image/')) {
+    return false;
+  }
+  if (!isBase64(arr[1])) {
+    return false;
+  }
+
+  return true;
+};

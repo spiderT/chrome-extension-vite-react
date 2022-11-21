@@ -1,5 +1,5 @@
 import './index.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Base64 from './base64';
 import { Input, Button } from 'antd';
 import ClipboardInput from '../ClipboardInput';

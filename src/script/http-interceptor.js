@@ -8,11 +8,7 @@ const AjaxInterceptorSetting = {
     let pageScriptEventDispatched = false;
     const modifyResponse = () => {
       AjaxInterceptorSetting.settings.ajaxInterceptorRules.forEach(({ switchOn, path, response: overrideTxt }) => {
-        let matched = false;
         if (switchOn && path && this.responseURL.includes(path)) {
-          matched = true;
-        }
-        if (matched) {
           this.responseText = overrideTxt;
           this.response = overrideTxt;
 
@@ -60,13 +56,17 @@ const AjaxInterceptorSetting = {
         if (attr === 'responseText' || attr === 'response') {
           Object.defineProperty(this, attr, {
             get: () => (this[`_${attr}`] == undefined ? xhr[attr] : this[`_${attr}`]),
-            set: (val) => (this[`_${attr}`] = val),
+            set: (val) => {
+              this[`_${attr}`] = val;
+            },
             enumerable: true,
           });
         } else {
           Object.defineProperty(this, attr, {
             get: () => xhr[attr],
-            set: (val) => (xhr[attr] = val),
+            set: (val) => {
+              xhr[attr] = val;
+            },
             enumerable: true,
           });
         }
@@ -74,17 +74,12 @@ const AjaxInterceptorSetting = {
     }
   },
 
-  originalFetch: window.fetch.bind(window),
+  originalFetch: null,
   myFetch: function(...args) {
     return AjaxInterceptorSetting.originalFetch(...args).then((response) => {
       let txt = undefined;
       AjaxInterceptorSetting.settings.ajaxInterceptorRules.forEach(({ switchOn, path, response: overrideTxt }) => {
-        let matched = false;
         if (switchOn && path && response.url.includes(path)) {
-          matched = true;
-        }
-
-        if (matched) {
           window.dispatchEvent(
             new CustomEvent('pageScript', {
               detail: { url: response.url, path },
@@ -104,7 +99,7 @@ const AjaxInterceptorSetting = {
 
         const newResponse = new Response(stream, {
           headers: response.headers,
-          status: response.status,
+          status: 200,
           statusText: response.statusText,
         });
         const proxy = new Proxy(newResponse, {
@@ -140,6 +135,9 @@ window.addEventListener(
   'message',
   function(event) {
     const data = event.data;
+    if (!AjaxInterceptorSetting.originalFetch) {
+      AjaxInterceptorSetting.originalFetch = window.fetch.bind(window);
+    }
 
     if (data.type === 'ajaxInterceptor' && data.to === 'pageScript') {
       AjaxInterceptorSetting.settings[data.key] = data.value;
